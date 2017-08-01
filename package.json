@@ -1,0 +1,21 @@
+{
+    "name": "handlebars-challenge",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "tape src/**/*.test.js | tap-spec",
+        "test:watch": "onchange 'src/**/*.js' 'src/**/*.hbs' - i -- npm test"
+    },
+    "author": "PiotrBerebecki",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.15.3",
+        "express-handlebars": "^3.0.0"
+    },
+    "devDependencies": {
+        "onchange": "^3.2.1",
+        "supertest": "^3.0.0",
+        "tap-spec": "^4.1.1",
+        "tape": "^4.8.0"
+    }
+}
