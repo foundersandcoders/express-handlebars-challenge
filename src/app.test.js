@@ -3,16 +3,32 @@ var request = require('supertest');
 
 var app = require('./app.js');
 
-test('GET /', assert => {
+test('All routes should return the expected results', t => {
     request(app)
         .get('/')
-        .expect(200) // .expect('Content-Type', /json/)
+        .expect(200)
+        .expect('Content-Type', /text/)
+        .expect(res => {
+            console.log(res.body);
+        })
         .end((err, res) => {
-            var expectedThings = 'Hellow';
-            var actualThings = res.body;
+            t.same(res.statusCode, 200, 'Status code is 200');
+            t.error(err, 'No error');
+            t.end();
+        });
+});
 
-            //   assert.error(err, 'No error');
-            //   assert.same(actualThings, expectedThings, 'Retrieve list of things');
-            assert.end();
+test('All routes should return the expected results', t => {
+    request(app)
+        .get('/s')
+        .expect(200)
+        .expect('Content-Type', /json/)
+        .expect(res => {
+            console.log(res.body);
+        })
+        .end((err, res) => {
+            t.same(res.statusCode, 200, 'Status code is 200');
+            t.error(err, 'No error');
+            t.end();
         });
 });
