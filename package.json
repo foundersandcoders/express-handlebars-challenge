@@ -3,6 +3,8 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
+        "start": "node src/index.js",
+        "start:watch": "nodemon -q src/index.js",
         "test": "tape src/**/*.test.js | tap-spec",
         "test:watch": "onchange 'src/**/*.js' 'src/**/*.hbs' - i -- npm test"
     },
@@ -13,6 +15,7 @@
         "express-handlebars": "^3.0.0"
     },
     "devDependencies": {
+        "nodemon": "^1.11.0",
         "onchange": "^3.2.1",
         "supertest": "^3.0.0",
         "tap-spec": "^4.1.1",
