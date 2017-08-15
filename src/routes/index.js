@@ -1,15 +1,8 @@
 const express = require('express');
 
-const router = express.Router();
+const userListFromDatabase = require('./../model');
 
-// list of users in your database
-const userListFromDatabase = [
-  { name: 'Noel', age: 17, language: 'Python' },
-  { name: 'Farima', age: 21, language: 'JavaScript' },
-  { name: 'Laia', age: 30, language: 'Elm' },
-  { name: 'Sophia', age: 16, language: 'JavaScript' },
-  { name: 'Nareh', age: 48, language: 'PHP' },
-];
+const router = express.Router();
 
 router.get('/', (req, res) => {
   res.render('home', { users: userListFromDatabase });

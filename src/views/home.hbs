@@ -14,8 +14,32 @@
   {{/each}}
 </ul>
 
-<h2>Challenge 3 - Display a list of users who are above 18 years old</h2>
+<h2>Challenge 3 - Display a list of users who are admins</h2>
 {{! Edit below this line}}
+<ul>
+  {{#each users}}
+    {{#if this.admin}}
+    <li>{{this.name}}</li>
+    {{/if}}
+  {{/each}}
+</ul>
 
-<h2>Challenge 4 - Display a list of users who know JavaScript</h2>
+<h2>Challenge 4 - Display a list of users along with their age</h2>
 {{! Edit below this line}}
+<ul>
+  {{#each users}}
+  <li>{{this.name}}, {{calculateAge this.age}}</li>
+  {{/each}}
+</ul>
+
+<h2>Challenge 5 - Display a list of users who are logged in or a label 'Log In' if the user is not logged in.</h2>
+{{! Edit below this line}}
+<ul>
+  {{#each users}}
+    {{#if this.loggedIn}}
+    <li>{{this.name}}</li>
+    {{else}}
+    <li>Log In</li>
+    {{/if}}
+  {{/each}}
+</ul>
